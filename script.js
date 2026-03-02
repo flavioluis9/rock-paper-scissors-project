@@ -1,4 +1,4 @@
-// Get computer choice function
+// Computer Choice Function
 
 function getComputerChoice() {
     let randomNumber = Math.random();
@@ -14,4 +14,13 @@ function getComputerChoice() {
     return computerChoice;
 }
 
-    console.log(getComputerChoice());
+console.log(getComputerChoice());
+
+// Human Choice Function
+
+function getHumanChoice() {
+    let humanChoice = prompt("Choose Rock, Paper or Scissors: ");
+    return humanChoice;
+}
+
+console.log(getHumanChoice());
