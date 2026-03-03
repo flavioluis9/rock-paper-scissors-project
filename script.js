@@ -16,6 +16,7 @@ function getComputerChoice() {
 
 console.log(getComputerChoice());
 
+
 // Human Choice Function
 
 function getHumanChoice() {
@@ -24,3 +25,13 @@ function getHumanChoice() {
 }
 
 console.log(getHumanChoice());
+
+
+// Scores
+
+let computerScore = 0;
+let humanScore = 0;
+
+
+// Single Round function
+
