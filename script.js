@@ -1,5 +1,4 @@
 // Computer Choice Function
-
 function getComputerChoice() {
     let randomNumber = Math.random();
     let computerChoice = "";
@@ -15,22 +14,22 @@ function getComputerChoice() {
 }
 
 
-// Human Choice Function
 
+// Human Choice Function
 function getHumanChoice() {
     let humanChoice = prompt("Choose Rock, Paper or Scissors: ");
     return humanChoice;
 }
 
 
-// Scores
 
+// Scores
 let computerScore = 0;
 let humanScore = 0;
 
 
-// Winning tables
 
+// Winning tables
 const beatsTable = {
     rock: "scissors",
     paper: "rock",
@@ -38,13 +37,10 @@ const beatsTable = {
 };
 
 
+
 // Single Round function
-
-
 function playRound(computerChoice, humanChoice) {
     if (computerChoice === humanChoice) {
-        computerScore++;
-        humanScore++;
         return "Tie! Both chose " + humanChoice;
     } else if (beatsTable[humanChoice] === computerChoice) {
         humanScore++;
@@ -54,9 +50,23 @@ function playRound(computerChoice, humanChoice) {
         return "You lose. Computer's choice, " + computerChoice + ", beats your choice, " + humanChoice + ".";
     }
 }
-
 console.log(playRound(getComputerChoice().toLowerCase(), getHumanChoice().toLowerCase()));
+console.log(`Score ==> You: ${humanScore} | Computer: ${computerScore}`);
 
 
-//
 
+// Round Number
+let roundNumber = 1;
+
+// Play Game function
+function playGame() {
+    for (let i = 1; i < 5; i++) {
+        playRound();
+        const humanSelection = getHumanChoice().toLowerCase();
+        const computerSelection = getComputerChoice().toLowerCase();
+        console.log(playRound(computerSelection, humanSelection));
+        console.log(`Score ==> You: ${humanScore} | Computer: ${computerScore}`);
+        roundNumber++;
+    }
+}
+playGame();
